@@ -4,14 +4,14 @@ import pandas as pd
 from openpyxl import load_workbook
 from openpyxl.utils import get_column_letter
 
-# --- Configuración  #
+# -- Configuración -- #
 URL = "https://www.geopriskindex.com/results-final-risk-index/"
 EXCEL_FILENAME = "formato_wide_geopriskinder.xlsx"
 SHEET_NAME = 'Índice de Riesgo Global'
 COUNTRY_COLUMN_NAME = '\ufeffCountry'
 
 try:
-    # Obtiene los datos de la web #
+    #-- Obtiene los datos de la web --#
     response = requests.get(URL)
     response.raise_for_status()
     soup = BeautifulSoup(response.text, 'html.parser')
@@ -21,7 +21,7 @@ try:
         # Extrae los encabezados #
         headers = [th.text.strip() for th in table.find_all('th')]
 
-        # Extraer datos de filas #
+        #-- Extraer datos de filas --#
         data = []
         tbody = table.find('tbody')
         if tbody:
@@ -32,11 +32,11 @@ try:
             print("No se encontró el cuerpo de la tabla (tbody).")
             exit()
 
-        # Crea DataFrame inicial #
+        #-- Crea DataFrame inicial --#
         df = pd.DataFrame(data, columns=headers)
         print("Encabezados del DataFrame:", headers)
 
-        # Crear DataFrame en formato ancho #
+        #-- Crear DataFrame en formato ancho --#
         unique_years = df['Year'].unique()
         unique_countries = df[COUNTRY_COLUMN_NAME].unique()
         df_wide = pd.DataFrame()
@@ -53,11 +53,11 @@ try:
                         values.append(country_value_map.get(country, ''))
                 df_wide[header] = values
 
-        # Guarda el DataFrame en  archivo Excel #
+        #-- Guarda el DataFrame en  archivo Excel --#
         df_wide.to_excel(EXCEL_FILENAME, index=False, sheet_name=SHEET_NAME)
         print(f"Se creo el archivo Excel: {EXCEL_FILENAME}")
 
-        # Ajusta ancho de columnas en Excel #
+        #-- Ajusta ancho de columnas en Excel --#
         workbook = load_workbook(EXCEL_FILENAME)
         sheet = workbook[SHEET_NAME]
 
