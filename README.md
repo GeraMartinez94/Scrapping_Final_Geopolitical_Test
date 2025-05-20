@@ -25,7 +25,7 @@ Upon executing the script, an Excel file (formato_wide_geopriskinder.xlsx) will 
 
 **Libraries Used:**
 
-requests: For making HTTP requests.
-beautifulsoup4: For parsing HTML.
-pandas: For data manipulation and analysis (DataFrames).
-openpyxl: For writing and modifying Excel files.
+**requests**: For making HTTP requests.
+-**beautifulsoup4**: For parsing HTML.
+**pandas**: For data manipulation and analysis (DataFrames).
+**openpyxl**: For writing and modifying Excel files.
