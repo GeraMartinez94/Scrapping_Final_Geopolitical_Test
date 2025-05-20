@@ -1,4 +1,6 @@
-README - Geopolitical Risk Index Scraping Test
+**Geopolitical Risk Index Scraping Test**
+
+
 This project is a web scraping test performed on the page: https://www.geopriskindex.com/results-final-risk-index/.
 
 Objective:
