@@ -22,3 +22,10 @@ Column Width Adjustment (Optional): The script includes functionality to automat
 Result:
 
 Upon executing the script, an Excel file (formato_wide_geopriskinder.xlsx) will be generated in the project directory. This file will contain the Geopolitical Risk Index data in a wide format, ready for use in other analysis or visualization tools.
+
+**Libraries Used:**
+
+requests: For making HTTP requests.
+beautifulsoup4: For parsing HTML.
+pandas: For data manipulation and analysis (DataFrames).
+openpyxl: For writing and modifying Excel files.
