@@ -7,7 +7,7 @@ This project is a web scraping test performed on the page: https://www.geopriski
 
 The main objective of this test is to extract the data from the table containing the Geopolitical Risk Index (GPR) and transform it into a structured (wide) format for further analysis or export.
 
-Script Description:
+**Script Description:**
 
 The Python script used for this test performs the following actions:
 
